@@ -1,0 +1,39 @@
+{
+  "name": "@apmixbot/dsh-sandbox-windows-acl",
+  "description": "Windows ACL write-restriction sandbox backend (restricted-token spawn with capability-SID write allowlist) for the ApmixBot sandbox seam",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./runner": {
+      "types": "./lib/types/runner.d.ts",
+      "default": "./lib/runner.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/runner.js",
+    "lib/types-*.js",
+    "assets",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/dsh-skill": "0.2.1-rc.2",
+    "@apmixbot/dsh-subprocess": "0.2.1-rc.2"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-lazy-require": "0.2.1-rc.2",
+    "@apmixbot/dsh-win32-process": "0.2.1-rc.2",
+    "koffi": "3.1.1",
+    "yaml": "^2.4.2"
+  }
+}

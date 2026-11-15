@@ -1,0 +1,84 @@
+{
+  "name": "@apmixbot/dsh-plugin-manager",
+  "description": "Current-profile plugin and bundle management shared by dsh CLI, Web and agent tools",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./registry": {
+      "types": "./lib/types/registry.d.ts",
+      "default": "./lib/types/registry.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./operations": {
+      "types": "./lib/types/operations.d.ts",
+      "default": "./lib/types/operations.js"
+    },
+    "./tools": {
+      "types": "./lib/types/tools.d.ts",
+      "default": "./lib/types/tools.js"
+    },
+    "./tools/locale/*.json": "./locale/tools/*.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "locale/tools/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@apmixbot/dsh-app-boot": "0.2.1-rc.2",
+    "@apmixbot/dsh-atomic-write": "0.2.1-rc.2",
+    "@apmixbot/schemastery": "3.18.5",
+    "execa": "^10.0.1",
+    "yaml": "^2.9.0",
+    "zod": "4.4.3",
+    "@apmixbot/dsh-util-values": "0.2.1-rc.2"
+  },
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/cordis-plugin-loader": "1.0.6",
+    "@apmixbot/dsh-host-plugin-inventory": "0.2.1-rc.2",
+    "@apmixbot/dsh-subprocess": "0.2.1-rc.2",
+    "@apmixbot/dsh-typert-protocol": "0.2.1-rc.2",
+    "@apmixbot/dsh-tools": "0.2.1-rc.2",
+    "@apmixbot/dsh-hmr": "0.2.1-rc.2",
+    "@apmixbot/dsh-brand": "0.2.1-rc.2",
+    "@apmixbot/dsh-sandbox-policy": "0.2.1-rc.2",
+    "@apmixbot/dsh-sandbox": "0.2.1-rc.2",
+    "@apmixbot/dsh-user-approval": "0.2.1-rc.2"
+  },
+  "peerDependenciesMeta": {
+    "@apmixbot/dsh-hmr": {
+      "optional": true
+    },
+    "@apmixbot/dsh-user-approval": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,84 @@
+/** Copy dictionaries for the plugin inventory Settings section. */
+/** The dictionary key set. */
+declare const keys: {
+    tab: string;
+    loading: string;
+    clientSyncing: string;
+    clientSyncFailed: string;
+    clientSyncRetry: string;
+    error: string;
+    metadataError: string;
+    retry: string;
+    search: string;
+    empty: string;
+    emptySearch: string;
+    presetTitle: string;
+    presetSubtitle: string;
+    switcherLabel: string;
+    presetOptionDefault: string;
+    presetOptionBroken: string;
+    globalTitle: string;
+    globalSubtitle: string;
+    presetProvidedDetail: string;
+    enabledIn: string;
+    matchesInOtherPresets: string;
+    enabledTag: string;
+    disabledTag: string;
+    conditionalTag: string;
+    presetEnabledTag: string;
+    failedTag: string;
+    moduleLabel: string;
+    fromPreset: string;
+    condition: string;
+    configuration: string;
+    runtime: string;
+    unobserved: string;
+    pending: string;
+    loadingPhase: string;
+    active: string;
+    failed: string;
+    unloading: string;
+};
+/** Plugin inventory locale key union. */
+export type PluginInventoryLocaleKey = keyof typeof keys;
+/** English dictionary. */
+export declare const en: {
+    tab: string;
+    loading: string;
+    clientSyncing: string;
+    clientSyncFailed: string;
+    clientSyncRetry: string;
+    error: string;
+    metadataError: string;
+    retry: string;
+    search: string;
+    empty: string;
+    emptySearch: string;
+    presetTitle: string;
+    presetSubtitle: string;
+    switcherLabel: string;
+    presetOptionDefault: string;
+    presetOptionBroken: string;
+    globalTitle: string;
+    globalSubtitle: string;
+    presetProvidedDetail: string;
+    enabledIn: string;
+    matchesInOtherPresets: string;
+    enabledTag: string;
+    disabledTag: string;
+    conditionalTag: string;
+    presetEnabledTag: string;
+    failedTag: string;
+    moduleLabel: string;
+    fromPreset: string;
+    condition: string;
+    configuration: string;
+    runtime: string;
+    unobserved: string;
+    pending: string;
+    loadingPhase: string;
+    active: string;
+    failed: string;
+    unloading: string;
+};
+//# sourceMappingURL=locales.d.ts.map

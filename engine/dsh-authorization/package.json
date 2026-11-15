@@ -1,0 +1,33 @@
+{
+  "name": "@apmixbot/dsh-authorization",
+  "description": "Authorization seam (ctx.authorization): plugin-owned flows that obtain a credential through a conversation with the human",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/dsh-credentials": "0.2.1-rc.2",
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5"
+  }
+}

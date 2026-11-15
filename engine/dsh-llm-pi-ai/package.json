@@ -1,0 +1,45 @@
+{
+  "name": "@apmixbot/dsh-llm-pi-ai",
+  "description": "pi-ai-backed adapter for the ApmixBot LLM seam (design-verification twin of dsh-llm-vendor)",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/dsh-attachment": "0.2.1-rc.2",
+    "@apmixbot/dsh-authorization": "0.2.1-rc.2",
+    "@apmixbot/dsh-credentials": "0.2.1-rc.2",
+    "@apmixbot/dsh-fs": "0.2.1-rc.2",
+    "@apmixbot/dsh-launch-environment": "0.2.1-rc.2",
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/dsh-timeout": "0.2.1-rc.2",
+    "@apmixbot/cordis-plugin-loader": "1.0.6"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-brand": "0.2.1-rc.2",
+    "@apmixbot/dsh-util-values": "0.2.1-rc.2",
+    "@apmixbot/schemastery": "3.18.5",
+    "@earendil-works/pi-ai": "^1.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@apmixbot/cordis-plugin-loader": {
+      "optional": true
+    }
+  }
+}

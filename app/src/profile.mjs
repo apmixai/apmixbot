@@ -1,0 +1,41 @@
+// The app's own DSH profile: its name, its bundles and its installation.
+import { fileURLToPath } from 'node:url'
+import { initProfile, loadProfileDirectory, readProfileManifest, resolveProfileDir, writeProfileBundles } from '@apmixbot/dsh-app-boot'
+
+export const PROFILE = 'apmixbot'
+// DSH's shared core, DSH's web front end (the window), then the Bot team. Bundles the user installs follow.
+export const BUNDLES = ['@apmixbot/dsh-base', '@apmixbot/dsh-web-app', 'apmixbot']
+// The app's own manifest is the installation: DSH imports plugins only from the installation's dependency
+// graph, resolves bundles there first, and keeps the bundles it names as direct dependencies from removal.
+export const INSTALL_ANCHOR = fileURLToPath(new URL('../package.json', import.meta.url))
+
+/**
+ * Put the app's bundles at the head of a profile's bundle list and keep the user's after them.
+ * initProfile writes the list only into a new profile, so a profile from an earlier build keeps its old list.
+ * @param {string} dir - the profile directory
+ */
+export function claimBundles(dir) {
+  const manifest = readProfileManifest('dsh', dir)
+  const listed = manifest.dsh?.profile?.bundles ?? []
+  const bundles = [...BUNDLES, ...listed.filter((name) => !BUNDLES.includes(name))]
+  if (bundles.join('\n') !== listed.join('\n')) writeProfileBundles(dir, manifest, bundles)
+}
+
+/**
+ * Create or update the profile under the current DSH_HOME and load it.
+ * @returns {import('@apmixbot/dsh-app-boot').Profile} the loaded profile
+ * @throws when one of the app's own bundles does not load
+ */
+export function loadAppProfile() {
+  const dir = resolveProfileDir(PROFILE)
+  initProfile(dir, BUNDLES)
+  claimBundles(dir)
+  return loadOwnBundles(dir, BUNDLES)
+}
+
+function loadOwnBundles(dir, bundles) {
+  const profile = loadProfileDirectory('dsh', dir, INSTALL_ANCHOR)
+  const lost = profile.skippedBundles.filter(({ packageName }) => bundles.includes(packageName))
+  if (lost.length > 0) throw new Error(`The app could not load its own bundles:\n${lost.map(({ packageName, reason }) => `${packageName}: ${reason}`).join('\n')}`)
+  return profile
+}

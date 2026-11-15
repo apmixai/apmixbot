@@ -1,0 +1,45 @@
+{
+  "name": "@apmixbot/dsh-experimental-auto-review",
+  "description": "Per-tool LLM authorization review for the ApmixBot Auto permission preset",
+  "version": "0.2.1-rc.2",
+  "icon": "./icon.svg",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "icon.svg",
+    "locale/*.json",
+    "lib/index.js",
+    "cordis.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/dsh-agent": "0.2.1-rc.2",
+    "@apmixbot/dsh-agent-instructions": "0.2.1-rc.2",
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/dsh-permission-presets": "0.2.1-rc.2",
+    "@apmixbot/dsh-session": "0.2.1-rc.2",
+    "@apmixbot/dsh-tools": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/dsh-working-directory": "0.2.1-rc.2"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-util-values": "0.2.1-rc.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "apmixbot-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ApmixBot: the agent engine, the Bot plugin and the desktop app, as one npm workspace",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "engine/*",
+    "plugin",
+    "app"
+  ],
+  "scripts": {
+    "build": "npm run build -w apmixbot",
+    "test": "npm test -w apmixbot && npm test -w apmixbot-desktop",
+    "lint": "npm run lint -w apmixbot",
+    "start": "npm start -w apmixbot-desktop"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@apmixbot/dsh-host-directory-picker-auto",
+  "description": "Adaptive chooser of the directory-picker seam: resolves the host situation at boot and mounts the native or browse backend for the ApmixBot web GUI host",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/cordis-plugin-loader": "1.0.6",
+    "@apmixbot/dsh-client-connection": "0.2.1-rc.2",
+    "@apmixbot/dsh-client-ui-directory-picker-browse": "0.2.1-rc.2",
+    "@apmixbot/dsh-client-ui-directory-picker-native": "0.2.1-rc.2",
+    "@apmixbot/dsh-host-directory-picker-browse": "0.2.1-rc.2",
+    "@apmixbot/dsh-host-directory-picker-native": "0.2.1-rc.2",
+    "@apmixbot/dsh-host-webserver": "0.2.1-rc.2"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-launch-environment": "0.2.1-rc.2"
+  }
+}

@@ -1,0 +1,20 @@
+ApmixBot
+
+This file lists the third-party material ApmixBot includes that its own license
+(LICENSE, Apache License 2.0) does not cover. The engine's notices are in
+engine/LICENSE.
+
+-------------------------------------------------------------------------------
+
+App logos
+
+The logos in plugin/src/client/app-logos.js, and the GitHub mark in
+plugin/src/client/connectors.js, are trademarks of their owners (Google,
+GitHub, Notion, Atlassian, Stripe and the others named there). ApmixBot shows
+them only to name the apps a user connects; it is not endorsed by those
+companies. They are not licensed under the Apache License with the rest of
+ApmixBot: the rights in them stay with their owners.
+
+They were redrawn as vectors from svgl.app, Simple Icons
+(https://simpleicons.org, CC0 1.0), Wikimedia Commons and the brands' own
+websites and design packages.

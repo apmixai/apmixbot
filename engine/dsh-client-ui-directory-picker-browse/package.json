@@ -1,0 +1,42 @@
+{
+  "name": "@apmixbot/dsh-client-ui-directory-picker-browse",
+  "description": "In-app directory browsing surface: the workspace directory-flow owner rendering the host's listing and creation primitives",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@apmixbot/dsh-api-remotes",
+        "@apmixbot/dsh-client-ui-renderer",
+        "@apmixbot/dsh-client-ui-workspace",
+        "@apmixbot/dsh-client-locale"
+      ],
+      "platform": "web"
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

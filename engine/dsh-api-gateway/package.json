@@ -1,0 +1,60 @@
+{
+  "name": "@apmixbot/dsh-api-gateway",
+  "description": "Typert Remote Host dispatcher and Client API endpoint",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "node": "./lib/client.node.js",
+      "browser": "./lib/client.browser.js",
+      "default": "./lib/client.browser.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./stream-protocol": {
+      "types": "./lib/types/stream-protocol.d.ts",
+      "default": "./lib/types/stream-protocol.js"
+    },
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@apmixbot/dsh-typert-registry",
+        "@apmixbot/dsh-client-connection"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.browser.js",
+    "lib/client.node.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@apmixbot/dsh-deque": "0.2.1-rc.2",
+    "@apmixbot/dsh-timeout": "0.2.1-rc.2",
+    "@apmixbot/schemastery": "3.18.5",
+    "ws": "^8.21.3",
+    "@apmixbot/dsh-typert-protocol": "0.2.1-rc.2"
+  },
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  }
+}

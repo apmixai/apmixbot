@@ -1,0 +1,20 @@
+node_modules/
+*.tgz
+# The desktop app's packages (npm run pack, npm run dist) and the next version that checks
+# its update (see app/README.md).
+/app/dist-pack/
+/app/dist-next/
+
+# Test bench, local engine data and the logs of dev/check.sh.
+.dsh-test*/
+.dsh-home/
+/shots/
+.playwright-mcp/
+
+
+# Local Docker deployment data.
+/docker/data/
+/docker/workspace/
+/docker/.env
+/.env
+/docker-compose.override.yml

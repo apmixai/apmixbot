@@ -1,0 +1,48 @@
+name: Bug report
+description: Something in ApmixBot does not work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please add a screenshot.** A screenshot of the whole window tells us more than a paragraph. A report with only one sentence cannot be fixed and may be closed.
+
+        Fastest: in ApmixBot, **Settings → Feedback → Copy** gives you the diagnostics to paste below.
+
+        Security problems: **Security** tab → **Report a vulnerability**. Questions and ideas: the repository's **Discussions** tab.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead. Copy the exact error text.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshot (strongly recommended)
+      description: Paste it here (Ctrl+V or ⌘V) or drag it in. A screen recording works too.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the group chat "…"
+        2. Send "…"
+        3. Writer shows "could not answer"
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: In ApmixBot, Settings → Feedback → Copy, then paste here.
+    validations:
+      required: true
+  - type: checkboxes
+    id: clean
+    attributes:
+      label: Privacy
+      options:
+        - label: This report has no API keys, tokens or personal data.
+          required: true

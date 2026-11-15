@@ -1,0 +1,42 @@
+{
+  "name": "@apmixbot/dsh-jobs",
+  "description": "Background job registry (ctx.jobs) for the ApmixBot — shared ids, owner isolation, polling, cancellation, and completion listeners for long-running tool work",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./brand": {
+      "types": "./lib/types/brand.d.ts",
+      "default": "./lib/types/brand.js"
+    },
+    "./view": {
+      "types": "./lib/types/view.d.ts",
+      "default": "./lib/types/view.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/dsh-agent": "0.2.1-rc.2",
+    "@apmixbot/dsh-brand": "0.2.1-rc.2",
+    "@apmixbot/dsh-session": "0.2.1-rc.2",
+    "@apmixbot/dsh-workspace": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "peerDependenciesMeta": {
+    "@apmixbot/dsh-workspace": {
+      "optional": true
+    }
+  }
+}

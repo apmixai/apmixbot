@@ -1,0 +1,36 @@
+{
+  "name": "@apmixbot/dsh-host-directory-picker-native",
+  "description": "Native-OS-chooser backend of the directory-picker seam for the ApmixBot web GUI host",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./worker": {
+      "types": "./lib/types/win32-dialog-worker.d.ts",
+      "default": "./lib/worker.cjs"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/worker.cjs",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@apmixbot/dsh-host-directory-picker": "0.2.1-rc.2",
+    "@apmixbot/dsh-native-command": "0.2.1-rc.2",
+    "koffi": "3.1.1"
+  },
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  }
+}

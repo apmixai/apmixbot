@@ -1,0 +1,44 @@
+{
+  "name": "@apmixbot/dsh-agent",
+  "description": "Agent interface, registry, initiator scope, and event vocabulary for the ApmixBot",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/dsh-scope": "0.2.1-rc.2",
+    "@apmixbot/dsh-session": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-projection": "0.2.1-rc.2",
+    "@apmixbot/dsh-system-prompt": "0.2.1-rc.2",
+    "@apmixbot/dsh-typert-protocol": "0.2.1-rc.2",
+    "@apmixbot/dsh-util-values": "0.2.1-rc.2",
+    "@apmixbot/dsh-workspace": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "peerDependenciesMeta": {
+    "@apmixbot/dsh-workspace": {
+      "optional": true
+    }
+  }
+}

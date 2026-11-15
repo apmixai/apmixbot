@@ -1,0 +1,112 @@
+{
+  "name": "@apmixbot/dsh-api-session-controller",
+  "description": "Session Remote commands, cold reads, and live control transport",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./remote-events": {
+      "types": "./lib/types/remote-events.d.ts",
+      "default": "./lib/types/remote-events.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "external": [
+        "@apmixbot/dsh-api-gateway/client"
+      ],
+      "inject": [
+        "@apmixbot/dsh-api-gateway",
+        "@apmixbot/dsh-client-file-upload"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@apmixbot/dsh-brand": "0.2.1-rc.2",
+    "@apmixbot/dsh-deque": "0.2.1-rc.2",
+    "@apmixbot/schemastery": "3.18.5",
+    "mime-types": "^3.0.2",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/dsh-agent": "0.2.1-rc.2",
+    "@apmixbot/dsh-agent-default-model": "0.2.1-rc.2",
+    "@apmixbot/dsh-agent-preset-registry": "0.2.1-rc.2",
+    "@apmixbot/dsh-api-gateway": "0.2.1-rc.2",
+    "@apmixbot/dsh-attachment": "0.2.1-rc.2",
+    "@apmixbot/dsh-client-connection": "0.2.1-rc.2",
+    "@apmixbot/dsh-client-file-upload": "0.2.1-rc.2",
+    "@apmixbot/dsh-commands": "0.2.1-rc.2",
+    "@apmixbot/dsh-credentials": "0.2.1-rc.2",
+    "@apmixbot/dsh-file-reference": "0.2.1-rc.2",
+    "@apmixbot/dsh-fs": "0.2.1-rc.2",
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/dsh-native-command": "0.2.1-rc.2",
+    "@apmixbot/dsh-scope": "0.2.1-rc.2",
+    "@apmixbot/dsh-session": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-persistence": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-projection": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-projection-cache": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-query": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-title": "0.2.1-rc.2",
+    "@apmixbot/dsh-settings": "0.2.1-rc.2",
+    "@apmixbot/dsh-skill": "0.2.1-rc.2",
+    "@apmixbot/dsh-subagent": "0.2.1-rc.2",
+    "@apmixbot/dsh-typert-protocol": "0.2.1-rc.2",
+    "@apmixbot/dsh-typert-registry": "0.2.1-rc.2",
+    "@apmixbot/dsh-util-time": "0.2.1-rc.2",
+    "@apmixbot/dsh-util-values": "0.2.1-rc.2",
+    "@apmixbot/dsh-util-workspace-path": "0.2.1-rc.2",
+    "@apmixbot/dsh-workspace": "0.2.1-rc.2",
+    "@apmixbot/dsh-working-directory": "0.2.1-rc.2"
+  },
+  "peerDependenciesMeta": {
+    "@apmixbot/dsh-session-persistence": {
+      "optional": true
+    },
+    "@apmixbot/dsh-session-projection-cache": {
+      "optional": true
+    },
+    "@apmixbot/dsh-settings": {
+      "optional": true
+    }
+  }
+}

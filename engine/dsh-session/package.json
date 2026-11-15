@@ -1,0 +1,45 @@
+{
+  "name": "@apmixbot/dsh-session",
+  "description": "Event-sourced session store for the ApmixBot",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./fork": {
+      "types": "./lib/types/fork.d.ts",
+      "default": "./lib/types/fork.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./surface": {
+      "types": "./lib/types/surface.d.ts",
+      "default": "./lib/types/surface.js"
+    },
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/dsh-scope": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/dsh-brand": "0.2.1-rc.2",
+    "@apmixbot/dsh-util-values": "0.2.1-rc.2"
+  }
+}

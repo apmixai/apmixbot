@@ -1,0 +1,48 @@
+{
+  "name": "@apmixbot/dsh-client-ui-open-in-app",
+  "description": "Web \"Open In...\" controls: the Session-header split button opening the workspace directory in an installed application, and the document preview's default-application controls for one file",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "client": {
+      "inject": [
+        "@apmixbot/dsh-api-gateway",
+        "@apmixbot/dsh-api-remotes",
+        "@apmixbot/dsh-api-session-controller",
+        "@apmixbot/dsh-client-locale",
+        "@apmixbot/dsh-client-shortcuts",
+        "@apmixbot/dsh-client-ui-conversation",
+        "@apmixbot/dsh-client-ui-layout",
+        "@apmixbot/dsh-client-ui-renderer",
+        "@apmixbot/dsh-client-ui-session",
+        "@apmixbot/dsh-client-ui-sidebar-documentpreview"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  }
+}

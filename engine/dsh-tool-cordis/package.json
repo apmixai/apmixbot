@@ -1,0 +1,38 @@
+{
+  "name": "@apmixbot/dsh-tool-cordis",
+  "description": "Read-only runtime API inspection for Harness plugin development",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./host": {
+      "types": "./lib/types/host.d.ts",
+      "default": "./lib/types/host.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./host/locale/*.json": "./locale/host/*.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "locale/host/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/cordis-plugin-loader": "1.0.6",
+    "@apmixbot/dsh-agent": "0.2.1-rc.2",
+    "@apmixbot/dsh-app-boot": "0.2.1-rc.2",
+    "@apmixbot/dsh-cordis-host-runner": "0.2.1-rc.2",
+    "@apmixbot/dsh-tools": "0.2.1-rc.2"
+  }
+}

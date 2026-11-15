@@ -1,0 +1,31 @@
+{
+  "name": "@apmixbot/cordis-plugin-include",
+  "description": "Include files in cordis configurations",
+  "version": "1.0.10",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts",
+    "lib/types/**/*.d.ts.map",
+    "src"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis-plugin-loader": "1.0.6",
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "dependencies": {
+    "@apmixbot/cosmokit": "1.8.6",
+    "js-yaml": "^4.1.0"
+  }
+}

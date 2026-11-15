@@ -1,0 +1,40 @@
+{
+  "name": "@apmixbot/dsh-config-editor",
+  "description": "Persist plugin configuration through profile patches and Loader reconciliation",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/cordis-plugin-loader": "1.0.6",
+    "@apmixbot/dsh-hmr": "0.2.1-rc.2",
+    "@apmixbot/cordis-plugin-include": "1.0.10",
+    "@apmixbot/dsh-app-boot": "0.2.1-rc.2"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-atomic-write": "0.2.1-rc.2",
+    "yaml": "^2.8.1",
+    "js-yaml": "^4.3.2"
+  },
+  "peerDependenciesMeta": {
+    "@apmixbot/dsh-hmr": {
+      "optional": true
+    }
+  }
+}

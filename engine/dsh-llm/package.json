@@ -1,0 +1,64 @@
+{
+  "name": "@apmixbot/dsh-llm",
+  "description": "Provider-neutral LLM service interface for the ApmixBot",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./brand": {
+      "types": "./lib/types/brand.d.ts",
+      "default": "./lib/types/brand.js"
+    },
+    "./message": {
+      "types": "./lib/types/message.d.ts",
+      "default": "./lib/types/message.js"
+    },
+    "./assistant-stream": {
+      "types": "./lib/types/assistant-stream.d.ts",
+      "default": "./lib/types/assistant-stream.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-util-crypto": "0.2.1-rc.2",
+    "@apmixbot/schemastery": "3.18.5",
+    "zod": "4.4.3",
+    "@apmixbot/dsh-timeout": "0.2.1-rc.2",
+    "@apmixbot/dsh-brand": "0.2.1-rc.2",
+    "@apmixbot/dsh-util-values": "0.2.1-rc.2",
+    "@apmixbot/dsh-typert-protocol": "0.2.1-rc.2"
+  }
+}

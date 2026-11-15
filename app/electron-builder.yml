@@ -1,0 +1,52 @@
+appId: com.apmixbot.desktop
+productName: ApmixBot
+copyright: Copyright 2026 the ApmixBot authors
+artifactName: ApmixBot-${version}-${os}-${arch}.${ext}
+directories:
+  output: dist-pack
+files:
+  - package.json
+  - src/**
+  - assets/**
+# The Host runs pnpm as a separate Node process to install plugins, so it must be a plain file.
+asarUnpack:
+  - node_modules/pnpm/**
+# node-pty, sharp and koffi ship prebuilt binaries for each platform. A rebuild would compile
+# node-pty from source and needs a C++ toolchain.
+npmRebuild: false
+# So the binaries come from npm as it installed them; a build for another architecture stops.
+beforePack: ./scripts/before-pack.mjs
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: assets/icon.ico
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  # The installer puts ApmixBot on the desktop and in the Start menu by itself.
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: ApmixBot
+  include: build/installer.nsh
+  installerLanguages: [en_US]
+mac:
+  # A zip, not a dmg: macOS 26 calls a downloaded unsigned dmg damaged and will not open it (#351).
+  target: zip
+  # Ad-hoc signing seals the bundle; no Developer ID or notarization.
+  identity: '-'
+  hardenedRuntime: false
+  icon: assets/icon.png
+  category: public.app-category.productivity
+# Where the installed app looks for updates: this copy's own GitHub releases. The package
+# carries it as app-update.yml, and the build writes latest.yml beside the installer; a
+# release attaches both to the GitHub release (--publish never). RELEASES_URL in
+# src/updates.mjs names the same repository for macOS. With `publish: null` the package
+# carries no app-update.yml and the app never checks (left out, electron-builder would guess
+# a GitHub feed).
+publish:
+  provider: github
+  owner: apmixai
+  repo: apmixbot

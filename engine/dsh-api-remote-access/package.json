@@ -1,0 +1,62 @@
+{
+  "name": "@apmixbot/dsh-api-remote-access",
+  "description": "Method-level Remote access control for non-owner Peers and the per-Peer access snapshot",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "external": [
+        "@apmixbot/dsh-api-gateway/client"
+      ],
+      "inject": [
+        "@apmixbot/dsh-api-gateway",
+        "@apmixbot/dsh-client-ui-renderer"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@apmixbot/dsh-typert-protocol": "0.2.1-rc.2",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  }
+}

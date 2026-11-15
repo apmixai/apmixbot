@@ -1,0 +1,29 @@
+# From the repository root:
+#   docker compose up -d --build
+# Configure this file directly; no .env file is needed.
+# No model key goes here: after you log in, the first Bot's chat asks for your model
+# provider's endpoint and API key, and ApmixBot keeps the key in ./docker/data.
+services:
+  apmixbot:
+    image: apmixbot:local
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        NPM_REGISTRY: https://registry.npmjs.org/
+    ports:
+      - "0.0.0.0:13080:3080"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      # Add your NAS/LAN IP and host names, without ports.
+      DSH_TRUSTED_HOST: "localhost,127.0.0.1"
+      DSH_LISTEN_PORT: "3080"
+    volumes:
+      - ./docker/data:/data
+      - ./docker/workspace:/workspace
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    stop_grace_period: 15s

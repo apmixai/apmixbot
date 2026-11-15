@@ -1,0 +1,39 @@
+{
+  "name": "@apmixbot/dsh-session-persistence-jsonl",
+  "description": "JSONL durable session persistence backend for the ApmixBot",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/worker.cjs",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/dsh-session": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-persistence": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-format": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-format-catalog": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-format-v3-to-v4": "0.2.1-rc.2",
+    "@apmixbot/node-addon-system": "0.1.2",
+    "@apmixbot/schemastery": "3.18.5",
+    "koffi": "3.1.1",
+    "p-limit": "7.3.3"
+  }
+}

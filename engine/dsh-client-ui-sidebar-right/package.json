@@ -1,0 +1,44 @@
+{
+  "name": "@apmixbot/dsh-client-ui-sidebar-right",
+  "description": "Right Sidebar: the docking surface's session-bound state, its panel and header expand control, and the navigation service over it",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@apmixbot/dsh-api-session-controller",
+        "@apmixbot/dsh-client-resources",
+        "@apmixbot/dsh-client-ui-conversation",
+        "@apmixbot/dsh-client-ui-layout",
+        "@apmixbot/dsh-client-ui-session",
+        "@apmixbot/dsh-client-shortcuts"
+      ],
+      "platform": "web"
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@apmixbot/dsh-http-proxy",
+  "description": "Process-wide outbound HTTP proxy policy for ApmixBot: resolve it from the launch environment and install it as undici's global dispatcher",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "dependencies": {
+    "undici": "8.11.2"
+  }
+}

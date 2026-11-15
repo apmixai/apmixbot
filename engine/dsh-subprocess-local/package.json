@@ -1,0 +1,49 @@
+{
+  "name": "@apmixbot/dsh-subprocess-local",
+  "description": "Local-subprocess implementation of the ApmixBot subprocess seam",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./runner": {
+      "types": "./lib/types/bin.d.ts",
+      "default": "./lib/runner.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./output": {
+      "types": "./lib/types/output.d.ts",
+      "default": "./lib/output.js"
+    },
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/runner.js",
+    "lib/runner-*.js",
+    "lib/output.js",
+    "scripts/ensure-spawn-helper.mjs",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/dsh-subprocess": "0.2.1-rc.2",
+    "@apmixbot/dsh-timeout": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-lazy-require": "0.2.1-rc.2",
+    "@apmixbot/dsh-win32-process": "0.2.1-rc.2",
+    "koffi": "3.1.1",
+    "node-pty": "1.2.0-beta.15"
+  },
+  "scripts": {
+    "postinstall": "node scripts/ensure-spawn-helper.mjs"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "@apmixbot/dsh-sdk-app",
+  "description": "The dsh SDK profile bundle: stdio JSON-RPC serving and process lifecycle over dsh-base",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@apmixbot/dsh-cmdline": "0.2.1-rc.2",
+    "@apmixbot/schemastery": "3.18.5",
+    "commander": "^15.0.0",
+    "@apmixbot/dsh-tool-workspace-dependencies": "0.2.1-rc.2"
+  },
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  }
+}

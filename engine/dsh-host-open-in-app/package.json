@@ -1,0 +1,37 @@
+{
+  "name": "@apmixbot/dsh-host-open-in-app",
+  "description": "Host half of open-in-app: resolved application catalog, icons, and the launch endpoint as three webServer routes",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./shared": {
+      "types": "./lib/types/shared.d.ts",
+      "default": "./lib/types/shared.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@apmixbot/dsh-launch-environment": "0.2.1-rc.2",
+    "@apmixbot/dsh-native-command": "0.2.1-rc.2",
+    "@apmixbot/dsh-subprocess": "0.2.1-rc.2",
+    "@apmixbot/schemastery": "3.18.5"
+  },
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  }
+}

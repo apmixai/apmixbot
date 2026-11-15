@@ -1,0 +1,47 @@
+{
+  "name": "@apmixbot/dsh-client-ui-subagent",
+  "description": "Subagent conversation catalog, continuation routing UI, and '@' reference source",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@apmixbot/dsh-api-session-controller",
+        "@apmixbot/dsh-client-locale",
+        "@apmixbot/dsh-client-resources",
+        "@apmixbot/dsh-client-ui-chat",
+        "@apmixbot/dsh-client-ui-conversation",
+        "@apmixbot/dsh-client-ui-primitives",
+        "@apmixbot/dsh-client-ui-sidebar-right",
+        "@apmixbot/dsh-client-ui-input-trigger",
+        "@apmixbot/dsh-client-ui-workspace"
+      ],
+      "platform": "web"
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

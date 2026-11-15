@@ -1,0 +1,40 @@
+{
+  "name": "@apmixbot/dsh-user-approval",
+  "description": "User-approval seam (ctx.approval) for the ApmixBot: one-shot permission decisions dispatched to composed answerers over the approval/request waterfall, fail-closed by default",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/dsh-agent": "0.2.1-rc.2",
+    "@apmixbot/dsh-brand": "0.2.1-rc.2",
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/dsh-scope": "0.2.1-rc.2",
+    "@apmixbot/dsh-session": "0.2.1-rc.2",
+    "@apmixbot/dsh-system-prompt": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "dependencies": {
+    "@apmixbot/schemastery": "3.18.5"
+  }
+}

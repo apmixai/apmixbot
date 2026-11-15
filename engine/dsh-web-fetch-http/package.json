@@ -1,0 +1,34 @@
+{
+  "name": "@apmixbot/dsh-web-fetch-http",
+  "description": "Anonymous public HTTP(S) fetch provider for the ApmixBot web capability seam (ctx.web)",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/dsh-timeout": "0.2.1-rc.2",
+    "@apmixbot/dsh-web": "0.2.1-rc.2",
+    "@apmixbot/dsh-http-proxy": "0.2.1-rc.2"
+  },
+  "dependencies": {
+    "@apmixbot/schemastery": "3.18.5",
+    "ipaddr.js": "^2.5.0",
+    "undici": "8.11.2"
+  }
+}

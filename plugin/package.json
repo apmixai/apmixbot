@@ -1,0 +1,58 @@
+{
+  "name": "apmixbot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ApmixBot: a team of long-lived AI Bots, with Main Bots, Bot-to-Bot messages and group chats",
+  "keywords": [
+    "dsh-plugin",
+    "apmixbot",
+    "bot",
+    "multi-agent",
+    "agents"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./web-search": "./web-search.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "src/host/",
+    "src/shared/",
+    "client.js",
+    "web-search.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "test": "node --test \"test/*.test.js\"",
+    "lint": "node scripts/lint.mjs",
+    "check": "sh dev/check.sh"
+  },
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/dsh-tools": "0.2.1-rc.2",
+    "@apmixbot/dsh-web": "0.2.1-rc.2"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "devDependencies": {
+    "@apmixbot/dsh": "0.2.1-rc.2",
+    "esbuild": "0.28.2",
+    "jsdom": "29.1.1",
+    "oxlint": "1.76.0"
+  }
+}

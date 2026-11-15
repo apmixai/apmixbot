@@ -1,0 +1,40 @@
+{
+  "name": "@apmixbot/dsh-experimental-terminal-bundle",
+  "description": "Keep shell processes alive across tool calls.",
+  "version": "0.2.1-rc.2",
+  "icon": "./icon.svg",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "icon.svg",
+    "locale/*.json",
+    "lib/index.js",
+    "cordis.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@apmixbot/dsh-tool-terminal": "0.2.1-rc.2",
+    "@apmixbot/dsh-terminal": "0.2.1-rc.2",
+    "@apmixbot/dsh-terminal-bash": "0.2.1-rc.2"
+  },
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5"
+  }
+}

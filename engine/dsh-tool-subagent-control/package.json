@@ -1,0 +1,41 @@
+{
+  "name": "@apmixbot/dsh-tool-subagent-control",
+  "description": "Globally named send_message, interrupt_agent, and list_agents tools over ctx.subagents continuations",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./list-agents": {
+      "types": "./lib/types/list-agents.d.ts",
+      "default": "./lib/types/list-agents.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./list-agents/locale/*.json": "./locale/list-agents/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "locale/list-agents/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/dsh-session": "0.2.1-rc.2",
+    "@apmixbot/dsh-subagent": "0.2.1-rc.2",
+    "@apmixbot/dsh-tools": "0.2.1-rc.2"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-brand": "0.2.1-rc.2",
+    "@apmixbot/dsh-util-values": "0.2.1-rc.2"
+  }
+}

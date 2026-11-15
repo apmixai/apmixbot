@@ -1,0 +1,34 @@
+{
+  "name": "@apmixbot/dsh-tool-bash-persistent",
+  "description": "Model-facing owner-scoped persistent Bash tool backed by the Harness PTY service",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/dsh-agent": "0.2.1-rc.2",
+    "@apmixbot/dsh-output-retention": "0.2.1-rc.2",
+    "@apmixbot/dsh-terminal": "0.2.1-rc.2",
+    "@apmixbot/dsh-timeout": "0.2.1-rc.2",
+    "@apmixbot/dsh-tools": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5",
+    "@apmixbot/dsh-working-directory": "0.2.1-rc.2"
+  },
+  "dependencies": {
+    "@apmixbot/schemastery": "3.18.5"
+  }
+}

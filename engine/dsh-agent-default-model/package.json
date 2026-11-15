@@ -1,0 +1,32 @@
+{
+  "name": "@apmixbot/dsh-agent-default-model",
+  "description": "Default model selection shared by Agent entry points",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@apmixbot/schemastery": "3.18.5",
+    "@apmixbot/dsh-config-editor": "0.2.1-rc.2"
+  },
+  "peerDependencies": {
+    "@apmixbot/dsh-agent": "0.2.1-rc.2",
+    "@apmixbot/dsh-llm": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "@apmixbot/dsh-agent-preset-registry",
+  "description": "Declarative Agent preset registry and profile-backed editing",
+  "version": "0.2.1-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./display": {
+      "types": "./lib/types/display.d.ts",
+      "default": "./lib/types/display.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@apmixbot/cordis-plugin-include": "1.0.10",
+    "@apmixbot/cordis-plugin-loader": "1.0.6",
+    "@apmixbot/dsh-agent": "0.2.1-rc.2",
+    "@apmixbot/dsh-scope": "0.2.1-rc.2",
+    "@apmixbot/dsh-session": "0.2.1-rc.2",
+    "@apmixbot/dsh-session-projection": "0.2.1-rc.2",
+    "@apmixbot/dsh-settings": "0.2.1-rc.2",
+    "@apmixbot/dsh-system-prompt": "0.2.1-rc.2",
+    "@apmixbot/dsh-tools": "0.2.1-rc.2",
+    "@apmixbot/dsh-typert-protocol": "0.2.1-rc.2",
+    "@apmixbot/cordis": "4.0.5"
+  },
+  "dependencies": {
+    "@apmixbot/dsh-app-boot": "0.2.1-rc.2",
+    "@apmixbot/schemastery": "3.18.5",
+    "zod": "4.4.3",
+    "js-yaml": "^4.3.2"
+  }
+}
